@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Heart's Letter to You 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .letter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: letterUnfold 2s ease-out;
+        }
+
+        @keyframes letterUnfold {
+            0% {
+                transform: rotateX(-90deg) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: rotateX(-45deg) scale(0.8);
+                opacity: 0.7;
+            }
+            100% {
+                transform: rotateX(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .letter-header {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 40px;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .letter-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #d63384;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .letter-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #6c5ce7;
+            opacity: 0.8;
+        }
+
+        .letter-content {
+            padding: 50px;
+            line-height: 2;
+            position: relative;
+        }
+
+        .letter-date {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2rem;
+            color: #d63384;
+            margin-bottom: 30px;
+        }
+
+        .letter-greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #d63384;
+            margin-bottom: 30px;
+        }
+
+        .letter-paragraph {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 25px;
+            text-align: justify;
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .letter-paragraph:nth-child(3) { animation-delay: 0.5s; }
+        .letter-paragraph:nth-child(4) { animation-delay: 1s; }
+        .letter-paragraph:nth-child(5) { animation-delay: 1.5s; }
+        .letter-paragraph:nth-child(6) { animation-delay: 2s; }
+        .letter-paragraph:nth-child(7) { animation-delay: 2.5s; }
+        .letter-paragraph:nth-child(8) { animation-delay: 3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter-signature {
+            text-align: right;
+            margin-top: 40px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #d63384;
+        }
+
+        .letter-ps {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 182, 193, 0.2);
+            border-left: 4px solid #ff6b9d;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            color: #d63384;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: floatAround 8s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes floatAround {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-30px) rotate(270deg);
+            }
+        }
+
+        .navigation-footer {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 30px;
+            border-radius: 0 0 20px 20px;
+            text-align: center;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #d63384, #ff6b9d);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(214, 51, 132, 0.4);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(214, 51, 132, 0.6);
+        }
+
+        .love-quote {
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 15px;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            color: #d63384;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .letter-content {
+                padding: 30px 25px;
+            }
+            
+            .letter-title {
+                font-size: 2rem;
+            }
+            
+            .letter-paragraph {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-heart" style="top: 10%; left: 10%; animation-delay: 0s;">💕</div>
+        <div class="floating-heart" style="top: 20%; right: 15%; animation-delay: 1s;">💖</div>
+        <div class="floating-heart" style="top: 60%; left: 5%; animation-delay: 2s;">💗</div>
+        <div class="floating-heart" style="top: 70%; right: 10%; animation-delay: 3s;">💝</div>
+        <div class="floating-heart" style="top: 40%; right: 20%; animation-delay: 4s;">❤️</div>
+    </div>
+
+    <div class="letter-container">
+        <div class="letter-header">
+            <h1 class="letter-title">A Letter From My Heart</h1>
+            <p class="letter-subtitle">To Rose</p>
+        </div>
+
+        <div class="letter-content">
+            <div class="letter-date">February 14th, 2026</div>
+            
+            <div class="letter-greeting">My Dearest Rose,</div>
+            
+            <div class="letter-paragraph">
+                As I sit here writing this letter, my heart is overflowing with emotions that words can barely capture. You said "Yes" to being my Valentine, and in that moment, you made me the happiest person in the entire universe. 🌟
+            </div>
+            
+            <div class="letter-paragraph">
+                From the very first moment I met you, I knew there was something magical about you. Your smile lights up my darkest days, your laugh is the most beautiful melody I have ever heard, and your presence makes everything in my world feel complete and perfect. You are the missing piece and peace of my life that completes me.
+            </div>
+            
+            <div class="letter-paragraph">
+                I want you to know that loving you has been the greatest adventure of my life. Every day I think of you and it feels like a beautiful dream that I never want to wake up from. You have shown me what true love really means - it's not just the butterflies in my stomach when I see you, but the peace I feel when you are in my arms.
+            </div>
+
+            <div class="love-quote">
+                "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine." 💕
+            </div>
+            
+            <div class="letter-paragraph">
+                You are my sunshine on cloudy days, my anchor in stormy seas, and my guiding star in the darkest nights. With you, I have discovered parts of myself I never knew existed. You make me want to be the best version of myself, not because you ask me to, but because your love inspires me to grow. The way you scold me and tell me what to do and what not to, and your words become the fibre of my being. Your wish is my command, Rose.
+            </div>
+            
+            <div class="letter-paragraph">
+                I promise to love you with every fiber of my being, to support your dreams as if they were my own, to hold your hand through every challenge, and to celebrate every joy with you. I promise to make you laugh when you're sad, to be your comfort when you're scared, and to be your biggest cheerleader in everything you do.
+            </div>
+            
+            <div class="letter-paragraph">
+                Thank you for choosing to be my Valentine, for choosing us, and for allowing me to love you. I can't wait to create a million more beautiful memories with you, to grow old together, and to love you more deeply with each passing day.
+            </div>
+
+            <div class="letter-ps">
+                Every time I look at you, I fall in love all over again. You are my forever and always. 💖
+            </div>
+            
+            <div class="letter-signature">
+                Forever yours,<br>
+                Your Niteen💕
+            </div>
+        </div>
+
+        <div class="navigation-footer">
+            <a href="index.html" class="back-button">💖 Back </a>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive sparkles when the page loads
+        function createSparkles() {
+            const sparkleContainer = document.createElement('div');
+            sparkleContainer.style.position = 'fixed';
+            sparkleContainer.style.top = '0';
+            sparkleContainer.style.left = '0';
+            sparkleContainer.style.width = '100%';
+            sparkleContainer.style.height = '100%';
+            sparkleContainer.style.pointerEvents = 'none';
+            sparkleContainer.style.zIndex = '1000';
+            document.body.appendChild(sparkleContainer);
+
+            const sparkles = ['✨', '⭐', '💫', '🌟'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+                    sparkle.style.position = 'absolute';
+                    sparkle.style.left = Math.random() * 100 + '%';
+                    sparkle.style.top = Math.random() * 100 + '%';
+                    sparkle.style.fontSize = '1.5rem';
+                    sparkle.style.animation = 'sparkleFloat 3s ease-out forwards';
+                    sparkleContainer.appendChild(sparkle);
+                    
+                    setTimeout(() => {
+                        if (sparkle.parentNode) {
+                            sparkle.parentNode.removeChild(sparkle);
+                        }
+                    }, 3000);
+                }, i * 200);
+            }
+        }
+
+        // Add sparkle animation CSS
+        const sparkleCSS = `
+            @keyframes sparkleFloat {
+                0% {
+                    opacity: 0;
+                    transform: scale(0) rotate(0deg);
+                }
+                50% {
+                    opacity: 1;
+                    transform: scale(1) rotate(180deg);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0) rotate(360deg);
+                }
+            }
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = sparkleCSS;
+        document.head.appendChild(style);
+
+        // Start sparkles when page loads
+        window.addEventListener('load', () => {
+            setTimeout(createSparkles, 1000);
+        });
+    </script>
+</body>
+</html>
